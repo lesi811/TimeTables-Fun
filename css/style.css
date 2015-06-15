@@ -1,0 +1,20 @@
+.buttons{
+margin-top:20%;
+}
+
+.img-responsive{
+max-width:200px;
+margin:0 auto;
+}
+
+.red{
+color:#ff0000;
+font-size:1.8em;
+}
+
+.green{
+color:#00ff00;
+font-size:1.4em;
+font-weight:bold;
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+
+  <head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  </head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+<a href="index.html"  class="btn btn-primary btn-lg btn-block"> &lt;&lt; Back to Main Menu</a>
+<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 class="text-center">Your highest score:<br><span ng-bind="hS"></span></h3>
+				<img src="img/smile.jpg" class="img-responsive">
+				<h5 class="text-center">Keep on Going</h5>
+			</div>
+		</div>
+	</div>
+
+	<script>
+	var app = angular.module('myApp', []); 
+	app.controller('myCtrl', function($scope) {
+	
+		//highest score BEGIN
+		$scope.highestScore = localStorage.getItem('highestScore');//vrati postojece iz localStorage
+		$scope.hS = (localStorage.getItem('highestScore')!==null) ? JSON.parse($scope.highestScore) : 0;
+		localStorage.setItem('highestScore', JSON.stringify($scope.hS));
+		//highest score END
+	});
+	</script>
+</body>
+
+</html>

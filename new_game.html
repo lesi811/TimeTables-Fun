@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <link rel="stylesheet" href="css/bootstrap.min.css">
+	  <link rel="stylesheet" href="css/style.css">
+	  <script data-require="angular.js@1.1.5" data-semver="1.1.5" src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  </head>
+
+<body ng-app="myApp" ng-controller="myCtrl">	
+<a href="index.html"  class="btn btn-primary btn-lg btn-block"> &lt;&lt; Back to Main Menu</a>
+
+		<div class="container">
+			 <div class="row">
+			   <div class="col-sm-12">
+			   <br><br>
+			   <img ng-src="{{image}}" class="img-responsive">
+			   
+				<h3>Your current score:<span ng-bind="score"></span></h3>
+				<p><span class="{{wellDone}}" ng-bind="text"></span></p><hr>
+				<h5>Enter your result</h5>
+				
+					<form ng-submit="checkResult()">
+						<table class="table">
+							<tr>
+								<td><span ng-bind="num1"></span></td>
+								<td>*</td>
+								<td><span ng-bind="num2"></span></td>
+								<td>=</td>
+								<td><input type="text" class="form-control" ng-model="scoreInput" /></td>
+							</tr>
+						</table>
+						<input type="submit"  class="btn btn-primary btn-lg" value="OK">
+						<input type="reset" class="btn btn-danger btn-lg" value="Cancel">
+					</form>
+				</div>
+			</div>
+		</div>    
+	
+	<script src="js/myNoteApp.js"></script>
+	<script src="js/myNoteCtrlNew.js"></script>
+  </body>
+
+</html>
